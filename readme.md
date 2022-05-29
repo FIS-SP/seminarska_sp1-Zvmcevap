@@ -38,5 +38,5 @@ stestiram. (Bo pa samo za serviranje preprostih datotek, ne bo nobene baze podat
 * [X] **Sprožilec za kviz** – Ustvari 3 kviz polja v labirintu in jih sproži ko uporabnik stopi na njih.
 * [X] **Hoja po labirintu** – Funkcionalnost premikanja uporabnika po labirintu, končana, tako tipke kot tipkovnica.
 * [X] **Ostalo, ne da se mi več sam o idejah pisat** Vse fertik!
-* [ ] **Mogoče debug?**
+* [ ] **Mogoče debug**
 
