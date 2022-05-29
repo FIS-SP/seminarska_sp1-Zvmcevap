@@ -20,8 +20,7 @@ function returnButtonRight(button) {
 
 export function fromMoveToPlayButtons(playButton, moveButtonsDiv) {
     moveButtonRight(moveButtonsDiv)
-    setTimeout(returnButtonLeft, 300, playButton)
-
+    setTimeout(returnButtonLeft, 2000, playButton)
 }
 
 export function fromPlayToMoveButtons(playButton, moveButtonsDiv) {

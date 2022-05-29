@@ -51,21 +51,6 @@ function hideAutoplayAlert() {
     navodila.prikazi()
 }
 
-if (autoPlayPromise !== undefined) {
-    autoPlayPromise.then(_ => {
-        // Autoplay started!
-    }).catch(error => {
-        // Autoplay not allowed!
-        // Mute video and try to play again
-        deaths.autoplayFail()
-        let autoButton = document.getElementById("autoplay-button")
-        autoButton.addEventListener("click", hideAutoplayAlert)
-        deaths.prikazi()
-        navodila.skrij()
-    });
-}
-
-
 let visited = [];
 const gridSize = 7;
 const labirint = document.getElementById("labirint")
@@ -206,11 +191,11 @@ function death(causa) {
     hideMovementButtons([moveButtonDown, moveButtonRight, moveButtonLeft, earButton])
     for (let i = 0; i < poljaArray.length; i++) {
         for (let l = 0; l < poljaArray[i].length; l++) {
-            setTimeout(uncolor, 1000 + (300 * (i + l)), poljaArray[i][l].div)
+            uncolor(poljaArray[i][l].div)
         }
     }
     unsail(sailingDiv)
-    setTimeout(fromMoveToPlayButtons, 2000, oneButtonDiv, moveButtonsDiv)
+    fromMoveToPlayButtons(oneButtonDiv, moveButtonsDiv)
     playerImage.classList.add("dead")
     pelikaniOdletijo()
     clearInterval(squawkInterval)
@@ -293,7 +278,9 @@ function win() {
 
 function endScreen() {
     stopMusic(victoryMusic)
-    setTimeout(fromMoveToPlayButtons, 2000, oneButtonDiv, moveButtonsDiv)
+    document.removeEventListener("keydown", handleKeyPress)
+
+    fromMoveToPlayButtons(oneButtonDiv, moveButtonsDiv)
     hideMovementButtons([moveButtonDown, moveButtonRight, moveButtonLeft, earButton])
     unsail(sailingDiv)
     pelikaniOdletijo()
