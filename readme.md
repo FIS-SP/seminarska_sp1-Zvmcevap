@@ -27,6 +27,8 @@ prišel na idejo, da bi se najbolje naučil z ustvaritvijo nečesa interaktivneg
 Python FastApi bo za back-end, ker mi *izgleda* lightweight, in nisem še nič naredil z njim, tako da ga lahko tukaj malo
 stestiram. (Bo pa samo za serviranje preprostih datotek, ne bo nobene baze podatkov, piškotov, itd.
 
+Localhost strežnik se zažene z: **python -m uvicorn main:app --reload**
+
 ## Zemljevid Poti
 
 * [X] **Osnovno okolje** – Postavitev datotečne strukture, Python okolja, index.html, itd.
