@@ -205,7 +205,7 @@ function death(causa) {
     document.removeEventListener("keydown", handleKeyPress)
     hideMovementButtons([moveButtonDown, moveButtonRight, moveButtonLeft, earButton])
     unsail(sailingDiv)
-    fromMoveToPlayButtons(oneButtonDiv, moveButtonsDiv);
+    setTimeout(fromMoveToPlayButtons, 2000, oneButtonDiv, moveButtonsDiv)
     playerImage.classList.add("dead")
     pelikaniOdletijo()
     clearInterval(squawkInterval)
@@ -288,9 +288,9 @@ function win() {
 
 function endScreen() {
     stopMusic(victoryMusic)
+    setTimeout(fromMoveToPlayButtons, 2000, oneButtonDiv, moveButtonsDiv)
     hideMovementButtons([moveButtonDown, moveButtonRight, moveButtonLeft, earButton])
     unsail(sailingDiv)
-    fromMoveToPlayButtons(oneButtonDiv, moveButtonsDiv);
     pelikaniOdletijo()
     clearInterval(squawkInterval)
     playButtonBeepInterval = setInterval(buttonBeepBoop, 750, playButton)
@@ -320,7 +320,7 @@ function movementUp() {
         moveButtonUp.style.fill = "white"
         visited[0].div.appendChild(playerImage)
         currentPoljeIndex = 0
-        squawkInterval = setInterval(squawk, 1000)
+        squawkInterval = setInterval(squawk, 2000)
         whisperDirections(visited[0].goTo)
         setTimeout(sail, 3000, sailingDiv)
     } else if (currentPoljeIndex === visited.length - 1) {
@@ -610,7 +610,7 @@ function chosenReward() {
     }
     setTimeout(odrisiKviz, 1500)
     if (!pelikanReward) {
-        squawkInterval = squawkInterval = setInterval(squawk, 1000)
+        squawkInterval = squawkInterval = setInterval(squawk, 2000)
     }
     setTimeout(whisperDirections, 5000, visited[currentPoljeIndex].goTo)
 }
@@ -629,6 +629,7 @@ function changeAnswerColor(answer, color) {
 function colorPolje(polje) {
     polje.classList.add("colored")
 }
+
 function uncolor(polje) {
     polje.classList.remove("colored")
 }
