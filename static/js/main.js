@@ -533,6 +533,7 @@ function startQuizRound() {
                 break
         }
     }
+    availableQuizes.splice(randomInt, 1)
     quiz.prikaziKviz()
     const answers = document.querySelectorAll(".quiz-answer")
     for (const answer of answers) {
