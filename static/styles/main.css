@@ -371,7 +371,7 @@ img {
     flex-grow: 1;
     max-height: 30vh;
     position: absolute;
-    bottom: 3vh;
+    bottom: 0;
 }
 
 .horizontal-answers {
@@ -382,7 +382,7 @@ img {
     flex-grow: 1;
     max-height: 30vh;
     position: absolute;
-    bottom: 3vh;
+    bottom: 0;
 }
 
 .quiz-answer {

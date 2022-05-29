@@ -204,6 +204,11 @@ function play() {
 function death(causa) {
     document.removeEventListener("keydown", handleKeyPress)
     hideMovementButtons([moveButtonDown, moveButtonRight, moveButtonLeft, earButton])
+    for (let i = 0; i < poljaArray.length; i++) {
+        for (let l = 0; l < poljaArray[i].length; l++) {
+            setTimeout(uncolor, 1000 + (300 * (i + l)), poljaArray[i][l].div)
+        }
+    }
     unsail(sailingDiv)
     setTimeout(fromMoveToPlayButtons, 2000, oneButtonDiv, moveButtonsDiv)
     playerImage.classList.add("dead")
