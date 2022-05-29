@@ -29,6 +29,8 @@ stestiram. (Bo pa samo za serviranje preprostih datotek, ne bo nobene baze podat
 
 Localhost strežnik se zažene z: **python -m uvicorn main:app --reload**
 
+Igra je deplojana na https://absolutely-stupid-maze-really.herokuapp.com/ ;)
+
 ## Zemljevid Poti
 
 * [X] **Osnovno okolje** – Postavitev datotečne strukture, Python okolja, index.html, itd.
